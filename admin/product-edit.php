@@ -160,33 +160,33 @@ if (isset($_POST['form1'])) {
 		}
 
 
-		if (isset($_POST['size'])) {
+		// if (isset($_POST['size'])) {
 
-			$statement = $pdo->prepare("DELETE FROM tbl_product_size WHERE p_id=?");
-			$statement->execute(array($_REQUEST['id']));
+		// 	$statement = $pdo->prepare("DELETE FROM tbl_product_size WHERE p_id=?");
+		// 	$statement->execute(array($_REQUEST['id']));
 
-			foreach ($_POST['size'] as $value) {
-				$statement = $pdo->prepare("INSERT INTO tbl_product_size (size_id,p_id) VALUES (?,?)");
-				$statement->execute(array($value, $_REQUEST['id']));
-			}
-		} else {
-			$statement = $pdo->prepare("DELETE FROM tbl_product_size WHERE p_id=?");
-			$statement->execute(array($_REQUEST['id']));
-		}
+		// 	foreach ($_POST['size'] as $value) {
+		// 		$statement = $pdo->prepare("INSERT INTO tbl_product_size (size_id,p_id) VALUES (?,?)");
+		// 		$statement->execute(array($value, $_REQUEST['id']));
+		// 	}
+		// } else {
+		// 	$statement = $pdo->prepare("DELETE FROM tbl_product_size WHERE p_id=?");
+		// 	$statement->execute(array($_REQUEST['id']));
+		// }
 
-		if (isset($_POST['color'])) {
+		// if (isset($_POST['color'])) {
 
-			$statement = $pdo->prepare("DELETE FROM tbl_product_color WHERE p_id=?");
-			$statement->execute(array($_REQUEST['id']));
+		// 	$statement = $pdo->prepare("DELETE FROM tbl_product_color WHERE p_id=?");
+		// 	$statement->execute(array($_REQUEST['id']));
 
-			foreach ($_POST['color'] as $value) {
-				$statement = $pdo->prepare("INSERT INTO tbl_product_color (color_id,p_id) VALUES (?,?)");
-				$statement->execute(array($value, $_REQUEST['id']));
-			}
-		} else {
-			$statement = $pdo->prepare("DELETE FROM tbl_product_color WHERE p_id=?");
-			$statement->execute(array($_REQUEST['id']));
-		}
+		// 	foreach ($_POST['color'] as $value) {
+		// 		$statement = $pdo->prepare("INSERT INTO tbl_product_color (color_id,p_id) VALUES (?,?)");
+		// 		$statement->execute(array($value, $_REQUEST['id']));
+		// 	}
+		// } else {
+		// 	$statement = $pdo->prepare("DELETE FROM tbl_product_color WHERE p_id=?");
+		// 	$statement->execute(array($_REQUEST['id']));
+		// }
 
 		$success_message = 'Product is updated successfully.';
 	}
